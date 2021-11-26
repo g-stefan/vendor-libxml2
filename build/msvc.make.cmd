@@ -6,7 +6,7 @@ rem Created by Grigore Stefan <g_stefan@yahoo.com>
 set ACTION=%1
 if "%1" == "" set ACTION=make
 
-echo -^> %ACTION% vendor-libxml2
+echo - %BUILD_PROJECT% ^> %1
 
 goto cmdXDefined
 :cmdX
@@ -66,5 +66,4 @@ exit 1
 :buildDone
 popd
 echo done > %WORKSPACE_PATH_BUILD%\build.done.flag
-
 
