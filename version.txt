@@ -1,1 +1,2 @@
-libxml2-2.9.12,http://xmlsoft.org/downloads.html
+libxml2-2.9.13,https://gitlab.gnome.org/GNOME/libxml2/-/releases
+
