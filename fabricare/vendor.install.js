@@ -8,6 +8,7 @@ exitIf(!Shell.copyFile("output/bin/xmlcatalog.exe", pathRepository + "/bin/xmlca
 exitIf(!Shell.copyFile("output/bin/xmllint.exe", pathRepository + "/bin/xmllint.exe"));
 
 exitIf(!Shell.copyDirRecursively("output/include", pathRepository + "/include"));
+exitIf(!Shell.copyDirRecursively("output/include/libxml2", pathRepository + "/include"));
 exitIf(!Shell.copyDirRecursively("output/lib", pathRepository + "/lib"));
 
 exitIf(!Shell.copyFile("output/lib/libxml2.lib", pathRepository + "/lib/libxml2.static.lib"));
