@@ -1,7 +1,7 @@
 {
 	"project": {
 		"name" : "libxml2",
-		"type" : "xyo-vendor",
+		"type" : "xyo-cpp",
 		"SPDX-License-Identifier": "LicenseRef-",
 		"sourceLink" : "https://gitlab.gnome.org/GNOME/libxml2/-/releases",
 		"version" : "2.9.13"
