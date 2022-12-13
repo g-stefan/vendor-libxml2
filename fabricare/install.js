@@ -3,6 +3,8 @@
 // SPDX-FileCopyrightText: 2022 Grigore Stefan <g_stefan@yahoo.com>
 // SPDX-License-Identifier: Unlicense
 
+messageAction("install");
+
 exitIf(!Shell.copyFile("output/bin/libxml2.dll", pathRepository + "/bin/libxml2.dll"));
 exitIf(!Shell.copyFile("output/bin/xmlcatalog.exe", pathRepository + "/bin/xmlcatalog.exe"));
 exitIf(!Shell.copyFile("output/bin/xmllint.exe", pathRepository + "/bin/xmllint.exe"));
