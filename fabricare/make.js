@@ -52,4 +52,7 @@ runInPath("source\\win32",function(){
 	exitIf(Shell.system("nmake /f Makefile.msvc clean"));
 });
 
+Shell.system("del /F /Q output\\bin\\test*");
+Shell.system("del /F /Q output\\bin\\run*");
+
 Shell.filePutContents("temp/build.done.flag", "done");
