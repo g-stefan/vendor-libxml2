@@ -4,6 +4,9 @@
 		"type" : "xyo-cpp",
 		"SPDX-License-Identifier": "MIT",
 		"sourceLink" : "https://gitlab.gnome.org/GNOME/libxml2/-/releases",
-		"version" : "2.9.13"
+		"version" : "2.10.3",
+		"hasRelease" : true,
+		"noVersion" : true,
+		"githubRelease" : true
 	}
 }
