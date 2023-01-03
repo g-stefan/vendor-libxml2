@@ -1,13 +1,17 @@
 {
-	"project": {
-		"name" : "libxml2",
+	"solution": {
+		"name" : "vendor-libxml2",
 		"type" : "xyo-cpp",
-		"SPDX-License-Identifier": "MIT",
-		"sourceLink" : "https://gitlab.gnome.org/GNOME/libxml2/-/releases",
-		"version" : "2.10.3",
-		"hasRelease" : true,
-		"noVersion" : true,
-		"githubRelease" : true,
-		"githubRepository" : "vendor-libxml2"
+		"projects": [
+			{
+				"name" : "libxml2",
+				"SPDX-License-Identifier": "MIT",
+				"sourceLink" : "https://gitlab.gnome.org/GNOME/libxml2/-/releases",
+				"version" : "2.10.3",
+				"noVersion" : true
+			}
+		],
+		"releaseName" : "libxml2",
+		"hasGithub" : true
 	}
 }
