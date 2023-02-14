@@ -21,6 +21,9 @@ Shell.mkdirRecursivelyIfNotExists("output/bin");
 Shell.mkdirRecursivelyIfNotExists("output/include");
 Shell.mkdirRecursivelyIfNotExists("output/lib");
 Shell.mkdirRecursivelyIfNotExists("temp");
+Shell.mkdirRecursivelyIfNotExists("temp/bin");
+Shell.mkdirRecursivelyIfNotExists("temp/include");
+Shell.mkdirRecursivelyIfNotExists("temp/lib");
 
 Shell.mkdirRecursivelyIfNotExists("temp/cmake");
 
@@ -34,10 +37,10 @@ if (!Shell.fileExists("temp/build.config.flag")) {
 	cmdConfig+=" debug=no";
 	cmdConfig+=" static=no";
 	cmdConfig+=" xml_debug=yes";
-	cmdConfig+=" bindir="+Shell.realPath(Shell.getcwd())+"\\output\\bin";
-	cmdConfig+=" incdir="+Shell.realPath(Shell.getcwd())+"\\output\\include";
-	cmdConfig+=" libdir="+Shell.realPath(Shell.getcwd())+"\\output\\lib";
-	cmdConfig+=" sodir="+Shell.realPath(Shell.getcwd())+"\\output\\bin";
+	cmdConfig+=" bindir="+Shell.realPath(Shell.getcwd())+"\\temp\\bin";
+	cmdConfig+=" incdir="+Shell.realPath(Shell.getcwd())+"\\temp\\include";
+	cmdConfig+=" libdir="+Shell.realPath(Shell.getcwd())+"\\temp\\lib";
+	cmdConfig+=" sodir="+Shell.realPath(Shell.getcwd())+"\\temp\\bin";
 
 	runInPath("source\\win32",function(){
 		exitIf(Shell.system(cmdConfig));
@@ -52,7 +55,17 @@ runInPath("source\\win32",function(){
 	exitIf(Shell.system("nmake /f Makefile.msvc clean"));
 });
 
-Shell.system("del /F /Q output\\bin\\test*");
-Shell.system("del /F /Q output\\bin\\run*");
+Shell.system("del /F /Q temp\\bin\\test*");
+Shell.system("del /F /Q temp\\bin\\run*");
+
+exitIf(!Shell.copyFile("temp/bin/libxml2.dll", "output/bin/libxml2.dll"));
+exitIf(!Shell.copyFile("temp/bin/xmlcatalog.exe", "output/bin/xmlcatalog.exe"));
+exitIf(!Shell.copyFile("temp/bin/xmllint.exe", "output/bin/xmllint.exe"));
+
+exitIf(!Shell.copyDirRecursively("temp/include", "output/include"));
+exitIf(!Shell.copyDirRecursively("temp/include/libxml2", "output/include"));
+exitIf(!Shell.copyDirRecursively("temp/lib", "output/lib"));
+
+exitIf(!Shell.copyFile("temp/lib/libxml2.lib", "output/lib/libxml2.static.lib"));
 
 Shell.filePutContents("temp/build.done.flag", "done");
