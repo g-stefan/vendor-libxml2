@@ -11,7 +11,6 @@
 				"noVersion" : true
 			}
 		],
-		"releaseName" : "libxml2",
-		"hasGithub" : true
+		"releaseName" : "libxml2"
 	}
 }
