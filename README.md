@@ -3,7 +3,7 @@ Build scripts for compiling [libxml2](http://xmlsoft.org/downloads.html) with MS
 
 ## License
 
-Copyright (c) 2021-2025 Grigore Stefan
+Copyright (c) 2021-2026 Grigore Stefan
 Licensed under the [MIT](LICENSE) license.
 
 **This is a compilation of different works.**
